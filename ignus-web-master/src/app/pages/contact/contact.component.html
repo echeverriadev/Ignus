@@ -1,0 +1,46 @@
+<div class="container contact">
+     
+  <div class="row m-b-lg">
+      <div class="col-lg-12 text-center">
+          <div class="navy-line"></div>
+          <h1>Contacto rápido</h1>
+          <p>Tu opinión para nosotros es muy importante, gracias por preferirnos.</p><br/>
+          <p><span class="navy">Direción: </span>{{ agency.ubication }}</p>
+          <p><span class="navy">Teléfono: </span>{{ agency.phoneNumber }} / {{ agency.phoneNumber2 }}</p>
+          <p><span class="navy">Rif: </span>{{ agency.rif }}</p>
+      </div>
+  </div>
+  <div class="row">
+    
+    <form (ngSubmit)="send()">
+    <div class="col-md-6">
+      
+      
+      
+     
+      <div class="form-group">
+        <input [(ngModel)]="contact.email" type="email" class="form-control" name="email" placeholder="Correo" required="">
+      </div>
+      <div class="form-group">
+        <select [(ngModel)]="contact.TypeContactId" class="form-control" name="TypeContactId" id="sel1">
+          <option *ngFor="let combos of combo" [ngValue]="combos.id" [selected]="contact.TypeContactId"> {{combos.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select [(ngModel)]="contact.SubjectId" class="form-control" name="SubjectId" id="sel2">
+          <option *ngFor="let combos of combo1" [ngValue]="combos.id" [selected]="contact.SubjectId"> {{combos.name}}</option>
+         
+        </select>
+      </div>
+
+    </div> 
+    <div class="col-md-6">
+      <textarea [(ngModel)]="contact.description" class="form-control form-contact" name="description" id="exampleFormControlTextarea1" rows="6" placeholder="Escriba su mensaje"></textarea>
+      <br/><button type="submit" class="btn btn-primary float-right block full-width m-b">Enviar</button>
+    </div>
+  </form>
+  </div>
+
+
+</div>

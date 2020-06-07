@@ -1,0 +1,38 @@
+   a{
+    color:#c2c2c2;
+   }
+   .select{
+     color: #c2c2c2;
+   }
+   .icon-footer {
+     background: #a2a0a0;
+     color: #fff;
+     padding-top:6px;
+     padding-bottom:2px;
+     padding-left: 9px;
+     height: 28px;
+     width: 28px;
+     display: block;
+     border-radius: 50px;
+   }
+   .form-contact{
+    margin-bottom:5px;
+    background: #727272;
+   }
+   .title h4{
+       color:#18a689;
+   }
+   .info{
+    margin-left:50px;
+    color:#c2c2c2;
+   }
+   .rif{
+    color:#c2c2c2;
+   }
+   #btn1 {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+       
+   }
+   

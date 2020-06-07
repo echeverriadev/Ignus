@@ -1,0 +1,38 @@
+<div class="container">
+   <div class="row">
+         <div class="col-md-3" *ngFor="let typeService of typeServices">
+               <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" [alt]="typeService.name" [src]="typeService.urlImage" data-holder-rendered="true" img="reponsive rounded" style="height: 225px; width: 100%; display: block;">
+                  <div class="card-body">
+                     <h4 class="card-text "><a  style="color:#1ab394">{{ typeService.name  | uppercase }}</a></h4>
+                     <p style="color:#414444">{{ typeService.description }}</p>
+                     <div class="d-flex justify-content-between ">
+                        <div>
+                           <button (click)="openModal(template)" type="button"  class="btn btn-primary full-width">Más información</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <br><br>
+         
+               <ng-template #template>
+                     <div class="modal-header">
+                       <h4 class="modal-title pull-left">{{ typeService.name  | uppercase }}</h4>
+                       <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                         <span aria-hidden="true">&times;</span>
+                       </button><br>
+                     </div>
+                     <div class="modal-body">
+                        <div *ngFor="let requeriment of typeService.requirements">
+                           <ul>
+                              <li>{{ requeriment.name }}</li>
+                           </ul>
+                        </div><hr>
+                     </div>
+                   </ng-template>
+
+         </div>
+    </div>
+</div>
+
+  <br><br>

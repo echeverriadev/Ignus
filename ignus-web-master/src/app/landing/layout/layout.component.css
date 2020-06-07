@@ -1,0 +1,11 @@
+.body {
+    background-color:#727272;
+}
+.button {
+    background-color: #1ab394; /* Green */
+    color: #1ab394;
+    border-bottom-color: #1ab394;
+}
+.full-width{
+    width: 100% !important;
+}

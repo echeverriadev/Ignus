@@ -1,0 +1,83 @@
+{
+  "status": true,
+  "data": {
+    "{{#each properties}}": {
+      "id": "{{#? this.id}}",
+      "ubication": "{{#? this.ubication}}",
+      "buildDate": "{{#? this.buildDate}}",
+      "status": "{{#? this.statusStr}}",
+      "nameDisplay": "{{#? this.TypeProperty.name}} en {{this.ubication}}, propietario: {{this.Client.firstName}} {{this.Client.lastName}}",
+      "typeProperty": {
+        "id": "{{#? this.TypeProperty.id}}",
+        "name": "{{#? this.TypeProperty.name}}",
+        "description": "{{#? this.TypeProperty.description}}"
+      },
+      "owner": {
+          "id": "{{#? this.Client.id}}",
+          "username": "{{#? this.Client.User.username}}",
+          "identification": "{{#? this.Client.identification}}",
+          "firstName": "{{#? this.Client.firstName}}",
+          "lastName": "{{#? this.Client.lastName}}",
+          "birthDate": "{{#? this.Client.birthDate}}",
+          "phoneNumber": "{{#? this.Client.phoneNumber}}",
+          "gender": "{{#? this.Client.gender}}"
+      },
+      "state": {
+        "id": "{{#? this.Parish.Municipality.State.id}}",
+        "name": "{{#? this.Parish.Municipality.State.name}}"
+      },
+      "municipality": {
+          "id": "{{#? this.Parish.Municipality.id}}",
+          "name": "{{#? this.Parish.Municipality.name}}"
+      },
+      "parish": {
+        "id": "{{#? this.Parish.id}}",
+        "name": "{{#? this.Parish.name}}"
+      },
+      "TypeService" : {
+        "id": "{{#? this.TypeService.id}}",
+        "name": "{{#? this.typeServiceStringOpposite}}",
+        "realName": "{{#? this.TypeService.name}}",
+        "description": "{{#? this.TypeService.description}}",
+        "urlImage": "{{this.TypeService.urlImage}}",
+        "offeringProperty": "{{this.TypeService.offeringProperty}}"
+      },
+      "Promotions" : {
+        "{{#each this.Promotions}}": {
+          "id": "{{#? this.id}}",
+          "name": "{{#? this.name}}",
+          "description": "{{#? this.description}}"
+        }
+      },
+      "typeSpecifications": {
+        "{{#each this.TypeSpecifications}}": {
+          "id": "{{this.id}}",
+          "name": "{{this.name}}",
+          "description": "{{this.description}}",
+          "specifications_checkbox" : {
+            "{{#each this.Specifications}}": [{
+              "{{#if this.typeInput == 'checkbox'}}": {
+                "id": "{{#? this.id}}",
+                "name": "{{#? this.name}}",
+                "description": "{{#? this.description}}",
+                "typeInput": "{{#? this.typeInput}}",
+                "quantity": "{{ this.Properties[0].PropertySpecification.quantity}}"
+              }
+            }]
+          },
+          "specifications_number" : {
+            "{{#each this.Specifications}}": [{
+              "{{#if this.typeInput == 'number'}}": {
+                "id": "{{#? this.id}}",
+                "name": "{{#? this.name}}",
+                "description": "{{#? this.description}}",
+                "typeInput": "{{#? this.typeInput}}",
+                "quantity": "{{ this.Properties[0].PropertySpecification.quantity}}"
+              }
+            }]
+          }
+        } 
+      }
+    }
+  }
+}

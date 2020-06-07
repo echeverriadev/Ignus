@@ -1,0 +1,30 @@
+{
+  "status": true,
+  "data": {
+    "{{#each employees}}": {
+      "user": {
+        "id": "{{#? this.User.id}}",
+        "username": "{{#? this.User.username}}",
+        "urlAvatar": "{{#? this.User.urlAvatar}}"
+      },
+      "person": {
+        "id": "{{#? this.id}}",
+        "userId": "{{#? this.UserId}}",
+        "identification": "{{#? this.identification}}",
+        "firstName": "{{#? this.firstName}}",
+        "lastName": "{{#? this.lastName}}",
+        "phoneNumber": "{{#? this.phoneNumber}}",
+        "gender": "{{#? this.gender}}"
+      },
+      "roles": {
+        "{{#each this.User.Roles}}": {
+          "id": "{{#? this.id}}",
+          "name": "{{#? this.name}}",
+          "description": "{{#? this.description}}"
+        }
+      },
+      "arrayDaysOfWorks": "{{#? this.Day.arrayDaysOfWorks}}",
+      "arrayFreeDays": "{{#? this.Day.arrayFreeDays}}"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": true,
+  "data": {
+      "{{#each data}}": {
+        "id": "{{#? this.id}}",
+        "name": "{{#? this.name}}",
+        "urlLogo": "{{#? this.urlLogo}}",
+        "urlAgencySocialNetwork": "{{#? this.urlAgencySocialNetwork}}",
+        "fontAwesome": "{{#? this.fontAwesome}}",
+        "iconIonic": "{{#? this.iconIonic}}"
+      }
+  }
+}

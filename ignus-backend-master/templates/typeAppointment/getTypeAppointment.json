@@ -1,0 +1,8 @@
+{
+  "status": true,
+  "data": {
+      "id": "{{#? typeAppointment.id}}",
+      "name": "{{#? typeAppointment.name}}",
+      "description": "{{#? typeAppointment.description}}"
+    }
+}

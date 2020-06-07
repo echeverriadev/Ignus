@@ -1,0 +1,10 @@
+{
+  "status": true,
+  "data": {
+      "{{#each type}}": {
+        "id": "{{#? this.id}}",
+        "name": "{{#? this.name}}",
+        "description": "{{#? this.description}}"
+      }
+  }
+}

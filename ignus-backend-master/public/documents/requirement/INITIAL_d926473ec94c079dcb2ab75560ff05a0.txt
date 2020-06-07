@@ -1,0 +1,16 @@
+*Eliminados:
+	TipoCliente
+*Cambios de nombre:
+	Especificaciones -> Especificacion
+	Funciones -> Funcion
+*Nuevas:
+	Actividad
+	ActividadPorServicio
+	Transacion
+	RecaudosPorCliente
+	RolesPorUsuario
+	RedSocial
+	Imagen
+	TipoImagen
+	
+

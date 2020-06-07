@@ -1,0 +1,16 @@
+{
+  "status": true,
+  "data": {
+      "id": "{{#? typeSpecification.id}}",
+      "name": "{{#? typeSpecification.name}}",
+      "description": "{{#? typeSpecification.description}}",
+      "specifications" : {
+        "{{#each typeSpecification.Specifications}}": {
+          "id": "{{#? this.id}}",
+          "name": "{{#? this.name}}",
+          "description": "{{#? this.description}}",
+          "typeInput": "{{#? this.typeInput}}"
+        }
+      }
+    }
+}

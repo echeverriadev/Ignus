@@ -1,0 +1,87 @@
+  <ul class="list-group">
+      <li class="list-group-item">
+          <div >
+              <div class="panel-heading"> 
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                  Tipo de Servicio</a>                
+              </div>
+              <div id="collapse1" class="panel-collapse collapse" ><br>
+                <div class="checkbox"  *ngFor="let typeService of typeServices" >
+                    <label *ngIf="typeService.offeringProperty==false"><input type="checkbox" value="">{{ typeService.name }}</label>
+                </div>
+              </div>
+            </div>
+      </li>
+      <li class="list-group-item">
+          <div >
+              <div class="panel-heading"> 
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                  Tipo de inmueble</a>                
+              </div>
+              <div id="collapse2" class="panel-collapse collapse"><br>
+                <div class="checkbox" *ngFor="let typeProperty of typeProperties">
+                    <label><input type="checkbox" value="">{{ typeProperty.name }}</label>
+                </div>
+              </div>
+            </div>
+      </li>
+      <li class="list-group-item">Amoblado</li>
+      <li class="list-group-item">Inmueble nuevo</li>
+      <li class="list-group-item">
+          <div >
+              <div class="panel-heading"> 
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                  Estado</a>                
+              </div>
+              <div id="collapse3" class="panel-collapse collapse"><br>
+                <div class="checkbox" *ngFor="let state of states">
+                    <label><input type="checkbox" [value]="state.id">{{ state.name }}</label>
+                </div>
+              </div>
+            </div>
+      </li>
+      <li class="list-group-item">
+          <div >
+              <div class="panel-heading"> 
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                  Ciudad</a>                
+              </div>
+              <div id="collapse4" class="panel-collapse collapse"><br>
+                <div class="checkbox" *ngFor="let city of cities">
+                        <label><input type="checkbox" [value]="city.id">{{ city.name }}</label>
+                    </div>
+              </div>
+            </div>
+      </li>
+      <li class="list-group-item">Precio</li>
+      <li class="list-group-item">
+          <div >
+              <div class="panel-heading"> 
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                  Cantidad de habitaciones</a>                
+              </div>
+              <div id="collapse2" class="panel-collapse collapse"><br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. 
+              </div>
+            </div>
+      </li>
+      <li class="list-group-item">
+          <div >
+              <div class="panel-heading"> 
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                  Puestos de estacionamiento</a>                
+              </div>
+              <div id="collapse2" class="panel-collapse collapse"><br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. 
+              </div>
+            </div>
+      </li>
+      <li class="list-group-item">Piscina</li>
+    </ul>
+

@@ -1,0 +1,35 @@
+{
+  "status": true,
+  "data": {
+    "id": "{{#? typeProperty.id}}",
+    "name": "{{#? typeProperty.name}}",
+    "description": "{{#? typeProperty.description}}",
+    "properties" : {
+      "{{#each typeProperty.Properties}}": {
+        "id": "{{#? this.id}}",
+        "ubication": "{{#? this.ubication}}",
+        "buildDate": "{{#? this.buildDate}}",
+        "TypeService" : {
+          "id": "{{#? this.TypeService.id}}",
+          "name": "{{#? this.TypeService.name}}",
+          "description": "{{#? this.TypeService.description}}",
+          "urlImage": "{{this.TypeService.urlImage}}"
+        },
+        "Promotions" : {
+          "{{#each this.Promotions}}": {
+            "id": "{{#? this.id}}",
+            "name": "{{#? this.name}}",
+            "description": "{{#? this.description}}"
+          }
+        }
+      }
+    },
+    "specifications": {
+      "{{#each typeProperty.Specifications}}": {
+        "id": "{{#? this.id}}",
+        "name": "{{#? this.name}}",
+        "description": "{{#? this.description}}"
+      }
+    }
+  }
+}

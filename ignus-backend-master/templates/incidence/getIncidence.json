@@ -1,0 +1,60 @@
+{
+  "status": true,
+  "data": {
+    "id": "{{#? incidence.id}}",
+    "name": "{{#? incidence.name}}",
+    "description": "{{#? incidence.description}}",
+    "date": "{{#? incidence.incidenceDate}}",
+    "decision": "{{#? incidence.decision}}",
+    "conclusion": "{{#? incidence.conclusion}}",
+    "status": "{{#? incidence.statusStr}}",
+    "transaction": {
+      "id": "{{#? incidence.Transaction.id}}",
+      "status": "{{#? incidence.Transaction.statusStr}}",
+      "nameForClient": "{{incidence.Transaction.Request.TypeService.name}}, agente: {{incidence.Transaction.Request.Employee.firstName}} {{incidence.Transaction.Request.Employee.lastName}} - {{incidence.Transaction.statusStr}}",
+      "nameForEmployee": "{{incidence.Transaction.Request.TypeService.name}}, cliente: {{incidence.Transaction.Request.Client.firstName}} {{incidence.Transaction.Request.Client.lastName}} - {{incidence.Transaction.statusStr}}",
+      "request": {
+        "id": "{{#? incidence.Transaction.Request.id}}",
+        "comment": "{{#? incidence.Transaction.Request.comment}}",
+        "requestDate": "{{#? incidence.Transaction.Request.requestDate}}",
+        "aprobationDate": "{{#? incidence.Transaction.Request.aprobationDate}}",
+        "attendedDate": "{{#? incidence.Transaction.Request.attendedDate}}",
+        "wishDate": "{{#? incidence.Transaction.Request.wishDate}}",
+        "status": "{{#? incidence.Transaction.Request.statusStr}}"
+      },
+      "client": {
+        "id": "{{#? incidence.Transaction.Request.Client.id}}",
+        "userId": "{{#? incidence.Transaction.Request.Client.UserId}}",
+        "username": "{{#? incidence.Transaction.Request.Client.User.username}}",
+        "identification": "{{#? incidence.Transaction.Request.Client.identification}}",
+        "firstName": "{{#? incidence.Transaction.Request.Client.firstName}}",
+        "lastName": "{{#? incidence.Transaction.Request.Client.lastName}}",
+        "bankName": "{{#? incidence.Transaction.Request.Client.bankName}}",
+        "bankAccount": "{{#? incidence.Transaction.Request.Client.bankAccount}}",
+        "birthDate": "{{#? incidence.Transaction.Request.Client.birthDate}}",
+        "gender": "{{#? incidence.Transaction.Request.Client.gender}}"
+      },
+      "employee": {
+        "id": "{{#? incidence.Transaction.Request.Employee.id}}",
+        "userId": "{{#? incidence.Transaction.Request.Employee.UserId}}",
+        "identification": "{{#? incidence.Transaction.Request.Employee.identification}}",
+        "firstName": "{{#? incidence.Transaction.Request.Employee.firstName}}",
+        "lastName": "{{#? incidence.Transaction.Request.Employee.lastName}}",
+        "phoneNumber": "{{#? incidence.Transaction.Request.Employee.phoneNumber}}",
+        "gender": "{{#? incidence.Transaction.Request.Employee.gender}}"
+      },
+      "typeService": {
+        "id": "{{#? incidence.Transaction.Request.TypeService.id}}",
+        "name": "{{#? incidence.Transaction.Request.TypeService.name}}",
+        "description": "{{#? incidence.Transaction.Request.TypeService.description}}",
+        "urlImage": "{{#? incidence.Transaction.Request.TypeService.urlImage}}",
+        "offeringProperty": "{{incidence.Transaction.Request.TypeService.offeringProperty}}"
+      }
+    },
+    "typeIncidence": {
+      "id": "{{#? incidence.TypeIncidence.id}}",
+      "name": "{{#? incidence.TypeIncidence.name}}",
+      "description": "{{#? incidence.TypeIncidence.description}}"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "status": true,
+  "data": {
+    "{{#each typeServices}}": {
+      "id": "{{#? this.id}}",
+      "name": "{{#? this.name}}",
+      "description": "{{#? this.description}}",
+      "urlImage": "{{#? this.urlImage}}",
+      "offeringProperty": "{{this.offeringProperty}}",
+      "requirements" : {
+        "{{#each this.Requirements}}": {
+          "id": "{{#? this.id}}",
+          "name": "{{#? this.name}}",
+          "description": "{{#? this.description}}"
+        }
+      },
+      "activities" : {
+        "{{#each this.Activities}}": {
+          "id": "{{#? this.id}}",
+          "name": "{{#? this.name}}",
+          "description": "{{#? this.description}}"
+        }
+      }
+    }
+  }
+}

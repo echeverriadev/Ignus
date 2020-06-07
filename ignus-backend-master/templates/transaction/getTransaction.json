@@ -1,0 +1,106 @@
+{
+  "status": true,
+  "data": {
+        "id": "{{#? transaction.id}}",
+        "nameForClient": "{{transaction.Request.TypeService.name}}, agente: {{transaction.Request.Employee.firstName}} {{transaction.Request.Employee.lastName}} - {{transaction.statusStr}}",
+        "nameForEmployee": "{{transaction.Request.TypeService.name}}, cliente: {{transaction.Request.Client.firstName}} {{transaction.Request.Client.lastName}} - {{transaction.statusStr}}",
+        "status": "{{#? transaction.statusStr}}",
+        "inProcessDate": "{{#? transaction.inProcessDate}}",
+        "incidenceDate": "{{#? transaction.incidenceDate}}",
+        "completedDate": "{{#? transaction.completedDate}}",
+        "publishedDate": "{{#? transaction.publishedDate}}",
+        "finishedDate": "{{#? transaction.finishedDate}}",
+        "canceledDate": "{{#? transaction.canceledDate}}",
+        "qualifiedDate": "{{#? transaction.qualifiedDate}}",
+        "reservedDate": "{{#? transaction.reservedDate}}",
+        "request": {
+            "id": "{{#? transaction.Request.id}}",
+            "comment": "{{#? transaction.Request.comment}}",
+            "requestDate": "{{#? transaction.Request.requestDate}}",
+            "aprobationDate": "{{#? transaction.Request.aprobationDate}}",
+            "attendedDate": "{{#? transaction.Request.attendedDate}}",
+            "wishDate": "{{#? transaction.Request.wishDate}}",
+            "status": "{{#? transaction.Request.statusStr}}"
+        },
+        "client": {
+            "id": "{{#? transaction.Request.Client.id}}",
+            "userId": "{{#? transaction.Request.Client.UserId}}",
+            "username": "{{#? transaction.Request.Client.User.username}}",
+            "identification": "{{#? transaction.Request.Client.identification}}",
+            "firstName": "{{#? transaction.Request.Client.firstName}}",
+            "lastName": "{{#? transaction.Request.Client.lastName}}",
+            "bankName": "{{#? transaction.Request.Client.bankName}}",
+            "bankAccount": "{{#? transaction.Request.Client.bankAccount}}",
+            "birthDate": "{{#? transaction.Request.Client.birthDate}}",
+            "gender": "{{#? transaction.Request.Client.gender}}"
+      },
+      "employee": {
+        "id": "{{#? transaction.Request.Employee.id}}",
+        "userId": "{{#? transaction.Request.Employee.UserId}}",
+        "identification": "{{#? transaction.Request.Employee.identification}}",
+        "firstName": "{{#? transaction.Request.Employee.firstName}}",
+        "lastName": "{{#? transaction.Request.Employee.lastName}}",
+        "phoneNumber": "{{#? transaction.Request.Employee.phoneNumber}}",
+        "gender": "{{#? transaction.Request.Employee.gender}}"
+      },
+      "typeService": {
+        "id": "{{#? transaction.Request.TypeService.id}}",
+        "name": "{{#? transaction.Request.TypeService.name}}",
+        "description": "{{#? transaction.Request.TypeService.description}}",
+        "urlImage": "{{#? transaction.Request.TypeService.urlImage}}",
+        "offeringProperty": "{{transaction.Request.TypeService.offeringProperty}}"
+      },
+      "activities": {
+          "{{#each transaction.Activities}}": {
+              "id": "{{#? this.id}}",
+              "name": "{{#? this.name}}",
+              "description": "{{#? this.description}}",
+              "nextToExecute": "{{#? this.TransactionActivity.nextToExecute}}",
+              "executionDate": "{{#? this.TransactionActivity.executionDate}}",
+              "reviewDate": "{{#? this.TransactionActivity.reviewDate}}",
+              "observation": "{{#? this.TransactionActivity.observation}}",
+              "status": "{{#? this.TransactionActivity.status}}"
+          }
+      },
+      "requirements": {
+          "{{#each transaction.Requirements}}": {
+              "id": "{{#? this.id}}",
+              "name": "{{#? this.name}}",
+              "description": "{{#? this.description}}",
+              "reviewDate": "{{#? this.TransactionRequirement.reviewDate}}",
+              "urlFileRequirement": "{{#? this.TransactionRequirement.urlFileRequirement}}",
+              "uploadDate": "{{#? this.TransactionRequirement.uploadDate}}",
+              "observation": "{{#? this.TransactionRequirement.observation}}",
+              "status": "{{#? this.TransactionRequirement.status}}"
+          }
+      },
+      "property": {
+        "id": "{{#? transaction.Request.Property.id}}",
+        "ubication": "{{#? transaction.Request.Property.ubication}}",
+        "buildDate": "{{#? transaction.Request.Property.buildDate}}",
+        "nameDisplay": "{{#? transaction.Request.Property.TypeProperty.name}}, inmueble en: {{transaction.Request.Property.ubication}}, dueño: {{transaction.Request.Property.Client.firstName}} {{transaction.Request.Property.Client.lastName}}",
+        "typeProperty": {
+          "id": "{{#? transaction.Request.Property.TypeProperty.id}}",
+          "name": "{{#? transaction.Request.Property.TypeProperty.name}}",
+          "description": "{{#? transaction.Request.Property.TypeProperty.description}}"
+        },
+        "client": {
+          "id": "{{#? transaction.Request.Property.Client.id}}",
+          "username": "{{#? transaction.Request.Property.Client.User.username}}",
+          "identification": "{{#? transaction.Request.Property.Client.identification}}",
+          "firstName": "{{#? transaction.Request.Property.Client.firstName}}",
+          "lastName": "{{#? transaction.Request.Property.Client.lastName}}",
+          "birthDate": "{{#? transaction.Request.Property.Client.birthDate}}",
+          "phoneNumber": "{{#? transaction.Request.Property.Client.phoneNumber}}",
+          "gender": "{{#? transaction.Request.Property.Client.gender}}"
+        },
+        "TypeService" : {
+          "id": "{{#? transaction.Request.Property.TypeService.id}}",
+          "name": "{{#? transaction.Request.Property.TypeService.name}}",
+          "description": "{{#? transaction.Request.Property.TypeService.description}}",
+          "urlImage": "{{transaction.Request.Property.TypeService.urlImage}}",
+          "offeringProperty": "{{transaction.Request.Property.TypeService.offeringProperty}}"
+        }
+      }
+  }
+}

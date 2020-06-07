@@ -1,0 +1,41 @@
+{
+  "status": true,
+  "data": {
+    "{{#each clients}}": {
+      "user": {
+        "id": "{{#? this.User.id}}",
+        "username": "{{#? this.User.username}}"
+      },
+      "person": {
+        "id": "{{#? this.id}}",
+        "identification": "{{#? this.identification}}",
+        "firstName": "{{#? this.firstName}}",
+        "lastName": "{{#? this.lastName}}",
+        "bankName": "{{#? this.bankName}}",
+        "bankAccount": "{{#? this.bankAccount}}",
+        "birthDate": "{{#? this.birthDate}}",
+        "gender": "{{#? this.gender}}",
+        "phoneNumber": "{{#? this.phoneNumber}}"
+      },
+      "roles": {
+        "{{#each this.User.Roles}}": {
+          "id": "{{#? this.id}}",
+          "name": "{{#? this.name}}",
+          "description": "{{#? this.description}}"
+        }
+      },
+      "state": {
+      "id": "{{#? this.Parish.Municipality.State.id}}",
+      "name": "{{#? this.Parish.Municipality.State.name}}"
+      },
+      "municipality": {
+          "id": "{{#? this.Parish.Municipality.id}}",
+          "name": "{{#? this.Parish.Municipality.name}}"
+      },
+      "parish": {
+        "id": "{{#? this.Parish.id}}",
+        "name": "{{#? this.Parish.name}}"
+      }
+    }
+  }
+}

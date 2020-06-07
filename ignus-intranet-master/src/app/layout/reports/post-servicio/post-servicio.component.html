@@ -1,0 +1,109 @@
+<div [@routerTransition]>
+        <app-page-header [heading]="'Reporte Estructurado'" [icon]="'fa-bar-chart-o'"></app-page-header>
+        <div class="row">
+            <div class="col col-xl-12">
+                <div class="card-header" style="position: relative; text-align: -webkit-center">
+                    Reporte Estructurado
+                </div>
+                <div class="row">
+                        <div class="col col-sm-5">
+                                <div class="form-group">
+                                  <label for="tipos">Entidad Nº1</label>
+                                  <select
+                                    class="form-control"
+                                    name="entities"
+                                    [(ngModel)]="entity1.id"
+                                    (change)="loadAtributes(entity1.id)"  
+                                    >
+                                    <option
+                                      *ngFor="let item of entities"
+                                      [ngValue]="item.id"
+                                      >{{ item.name }}</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="col col-sm-7">
+                                    <div class="form-group">
+                                        <label for="nombre">Atributos Nº1</label>
+                                        <ngx-select [multiple]="true" [items]="atributes" [keepSelectedItems]=true
+                                            optionValueField="id" optionTextField='name' 
+                                            [(ngModel)]="ngxValue" placeholder="Seleccione los Atributos"
+                                            (selectionChanges)="doSelectOptions($event)" [keepSelectedItems]=true>
+                                        </ngx-select>
+                                    </div>
+                                </div>
+                                  <div class="col col-sm-5">
+                                        <div class="form-group">
+                                          <label for="atribute1">Entidad Nº2</label>
+                                          <select
+                                            class="form-control"
+                                            name="entities2"
+                                            [(ngModel)]="entity3.id"
+                                            (change)="loadAtributes2(entity3.id)"  
+                                            >
+                                            <option
+                                              *ngFor="let item of entities2"
+                                              [ngValue]="item.id"
+                                              >{{ item.name }}</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                    
+                                            <div class="col col-sm-7">
+                                                <div class="form-group">
+                                                    <label for="nombre">Atributos Nº2</label>
+                                                    <ngx-select [multiple]="true" [items]="atributes2" [keepSelectedItems]=true
+                                                        optionValueField="id" optionTextField='name' 
+                                                        [(ngModel)]="ngxValue2" placeholder="Seleccione los Atributos"
+                                                        (selectionChanges)="doSelectOptions($event)" [keepSelectedItems]=true>
+                                                    </ngx-select>
+                                                </div>
+                                                </div>
+                                                <div class="col col-sm-12 text-center">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-success" type="button" (click)="buscar()" style="position: relative; top: 30px;  background: #1AB394;">
+                                                                Generar
+                                                            </button>
+                                                        </span>
+                                                        <span class="input-group-btn" *ngIf="view" >
+                                                                <button class="btn btn-success" type="button" value="Exportar" (click)="downloadImagePDF()" style="position: relative; top: 30px;  background: #1AB394; margin-left: 8px;">
+                                                                    Imprimir
+                                                                </button>
+                                                        </span>
+                                                    </div>
+                                    
+    </div>
+    <br>
+    <br>
+    <div class="row">
+                    <body *ngIf="view">
+                            <div id="content" #content class="wide-card mdl-card mdl-shadow--2dp">
+                                    <div class="card-body">
+                                            <div class="col col-sm-12">
+                                                    <div style="position: relative; text-align: -webkit-center">
+                                                            <h1><b> Reportes Solicitados</b></h1>
+                                                        </div>
+                                            </div>
+                                            <div class="col col-sm-12">
+                                                    <div class="card border-primary">
+                                                        <div class="card-header" style="position: relative; text-align: -webkit-center">
+                                                            
+                                                        </div>
+                                                        <br>
+                                                    <div class="row">
+                                                            <div class="col-12 col-md-4 col-sm-6">
+                                                               
+                                                                
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                            </div>
+                    </body>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      

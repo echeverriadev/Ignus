@@ -1,0 +1,36 @@
+{
+  "status": true,
+  "data": {
+    "{{#each promotions}}": {
+      "id": "{{#? this.id}}",
+      "name": "{{#? this.name}}",
+      "description": "{{#? this.description}}",
+      "status": "{{#? this.status}}",
+      "bin_status": "{{this.bin_status}}",
+      "urlImage": "{{#? this.urlImage}}",
+      "properties" : {
+        "{{#each this.Properties}}": {
+          "id": "{{#? this.id}}",
+          "ubication": "{{#? this.ubication}}",
+          "buildDate": "{{#? this.buildDate}}",
+          "nameDisplay": "{{#? this.TypeProperty.name}} en {{this.ubication}}, propietario: {{this.Client.firstName}} {{this.Client.lastName}}"
+        }
+      },
+      "specifications": {
+        "{{#each this.Specifications}}": {
+          "id": "{{#? this.id}}",
+          "name": "{{#? this.name}}",
+          "description": "{{#? this.description}}",
+          "properties": {
+            "{{#each this.Properties}}": {
+              "id": "{{#? this.id}}",
+              "ubication": "{{#? this.ubication}}",
+              "buildDate": "{{#? this.buildDate}}",
+              "nameDisplay": "{{#? this.TypeProperty.name}} en {{this.ubication}}, propietario: {{this.Client.firstName}} {{this.Client.lastName}}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

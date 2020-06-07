@@ -1,0 +1,17 @@
+{
+  "status": true,
+  "data": {
+    "id": "{{#? auxFunction.id}}",
+    "name": "{{#? auxFunction.name}}",
+    "description": "{{#? auxFunction.description}}",
+    "link": "{{#? auxFunction.link}}",
+    "icon": "{{#? auxFunction.icon}}",
+    "roles" : {
+      "{{#each auxFunction.Roles}}": {
+        "id": "{{#? this.id}}",
+        "name": "{{#? this.name}}",
+        "description": "{{#? this.description}}"
+      }
+    }
+  }
+}

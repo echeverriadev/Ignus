@@ -1,0 +1,14 @@
+{
+  "status": true,
+  "data": {
+      "{{#each data}}": {
+        "id": "{{#? this.id}}",
+        "text": "{{#? this.text}}",
+        "date": "{{#? this.creationDate}}",
+        "status": "{{#? this.status}}",
+        "type": "{{#? this.TypeNotification.name}}",
+        "urlImage": "{{#? this.TypeNotification.urlImage}}",
+        "urlRedirectIntranet": "{{#? this.TypeNotification.urlRedirectIntranet}}"
+      }
+  }
+}

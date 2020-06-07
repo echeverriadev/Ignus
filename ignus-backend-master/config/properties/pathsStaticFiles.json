@@ -1,0 +1,11 @@
+{
+    "logo": "imgs/logo",
+    "socialNetwork": "imgs/socialNetwork",
+    "avatar": "imgs/avatar",
+    "typeService": "imgs/typeService",
+    "property": "imgs/property",
+    "promotion": "imgs/promotion",
+    "requirement": "documents/requirement",
+    "contract": "documents/contract",
+    "inspection": "documents/inspection"
+}

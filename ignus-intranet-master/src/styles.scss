@@ -1,0 +1,40 @@
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import "../node_modules/dragula/dist/dragula.css";
+// regular style toast
+@import '~ngx-toastr/toastr.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@ng-select/ng-select/themes/material.theme.css";
+// bootstrap style toast
+// or import a bootstrap 4 alert styled design (SASS ONLY)
+// should be after your bootstrap imports, it uses bs4 variables, mixins, functions
+@import '~ngx-toastr/toastr-bs4-alert';
+// if you'd like to use it without importing all of bootstrap it requires
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~ngx-toastr/toastr-bs4-alert';
+
+
+
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body > app-root > app-layout > section > app-usuario > ng4-loading-spinner > div.hidden.spinner.center{
+
+  position: absolute;
+  padding: 0px;
+  top: 500px;
+  left: 500px;
+  height: 100%;
+  width: 100%;
+  z-index: 9998;
+  background: #000;
+  opacity: 0.6;
+  transition: opacity 0.3s linear;
+
+}
+

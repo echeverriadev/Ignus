@@ -1,0 +1,73 @@
+{
+  "status": true,
+  "data": {
+    "{{#each requests}}": {
+      "id": "{{#? this.id}}",
+      "comment": "{{#? this.comment}}",
+      "requestDate": "{{#? this.requestDate}}",
+      "aprobationDate": "{{#? this.aprobationDate}}",
+      "attendedDate": "{{#? this.attendedDate}}",
+      "nameForClient": "{{this.TypeService.name}}, agente: {{this.Employee.firstName}} {{this.Employee.lastName}} - {{this.statusStr}}",
+      "nameForEmployee": "{{this.TypeService.name}}, cliente: {{this.Client.firstName}} {{this.Client.lastName}} - {{this.statusStr}}",
+      "wishDate": "{{#? this.wishDate}}",
+      "status": "{{#? this.statusStr}}",
+      "client": {
+            "id": "{{#? this.Client.id}}",
+            "userId": "{{#? this.Client.UserId}}",
+            "username": "{{#? this.Client.User.username}}",
+            "identification": "{{#? this.Client.identification}}",
+            "firstName": "{{#? this.Client.firstName}}",
+            "lastName": "{{#? this.Client.lastName}}",
+            "bankName": "{{#? this.Client.bankName}}",
+            "bankAccount": "{{#? this.Client.bankAccount}}",
+            "birthDate": "{{#? this.Client.birthDate}}",
+            "gender": "{{#? this.Client.gender}}",
+            "phoneNumber": "{{#? this.Client.phoneNumber}}"
+      },
+      "employee": {
+        "id": "{{#? this.Employee.id}}",
+        "userId": "{{#? this.Employee.UserId}}",
+        "identification": "{{#? this.Employee.identification}}",
+        "firstName": "{{#? this.Employee.firstName}}",
+        "lastName": "{{#? this.Employee.lastName}}",
+        "phoneNumber": "{{#? this.Employee.phoneNumber}}",
+        "gender": "{{#? this.Employee.gender}}"
+      },
+      "typeService": {
+        "id": "{{#? this.TypeService.id}}",
+        "name": "{{#? this.TypeService.name}}",
+        "description": "{{#? this.TypeService.description}}",
+        "urlImage": "{{#? this.TypeService.urlImage}}",
+        "offeringProperty": "{{this.TypeService.offeringProperty}}"
+      },
+      "typeRequest": {
+        "id": "{{#? this.TypeRequest.id}}",
+        "name": "{{#? this.TypeRequest.name}}",
+        "description": "{{#? this.TypeRequest.description}}"
+      },
+      "property": {
+        "id": "{{#? this.Property.id}}",
+        "ubication": "{{#? this.Property.ubication}}",
+        "buildDate": "{{#? this.Property.buildDate}}",
+        "status": "{{#? this.Property.statusStr}}",
+        "typeProperty": {
+          "id": "{{#? this.Property.TypeProperty.id}}",
+          "name": "{{#? this.Property.TypeProperty.name}}",
+          "description": "{{#? this.Property.TypeProperty.description}}"
+        },
+        "state": {
+          "id": "{{#? this.Property.Parish.Municipality.State.id}}",
+          "name": "{{#? this.Property.Parish.Municipality.State.name}}"
+        },
+        "municipality": {
+            "id": "{{#? this.Property.Parish.Municipality.id}}",
+            "name": "{{#? this.Property.Parish.Municipality.name}}"
+        },
+        "parish": {
+          "id": "{{#? this.Property.Parish.id}}",
+          "name": "{{#? this.Property.Parish.name}}"
+        }
+      }
+    }
+  }
+}

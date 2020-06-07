@@ -1,0 +1,11 @@
+{
+  "status": true,
+  "data": {
+    "{{#each colors}}": {
+      "id": "{{#? this.id}}",
+      "header": "{{#? this.header}}",
+      "menu": "{{#? this.menu}}",
+      "background": "{{#? this.background}}"
+    }
+  }
+}

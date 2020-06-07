@@ -1,0 +1,42 @@
+{
+  "status": true,
+  "data": {
+    "{{#each inspections}}": {
+      "id": "{{#? this.id}}",
+      "urlFileInspection": "{{#? this.urlFileInspection}}",
+      "observation": "{{#? this.observation}}",
+      "uploadDate": "{{#? this.uploadDate}}",
+      "status": "{{#? this.status}}",
+      "request": {
+        "id": "{{#? this.Request.id}}",
+        "comment": "{{#? this.Request.comment}}",
+        "requestDate": "{{#? this.Request.requestDate}}",
+        "aprobationDate": "{{#? this.Request.aprobationDate}}",
+        "attendedDate": "{{#? this.Request.attendedDate}}",
+        "wishDate": "{{#? this.Request.wishDate}}",
+        "status": "{{#? this.Request.statusStr}}"
+      },
+      "client": {
+        "id": "{{#? this.Request.Client.id}}",
+        "userId": "{{#? this.Request.Client.UserId}}",
+        "username": "{{#? this.Request.Client.User.username}}",
+        "identification": "{{#? this.Request.Client.identification}}",
+        "firstName": "{{#? this.Request.Client.firstName}}",
+        "lastName": "{{#? this.Request.Client.lastName}}",
+        "bankName": "{{#? this.Request.Client.bankName}}",
+        "bankAccount": "{{#? this.Request.Client.bankAccount}}",
+        "birthDate": "{{#? this.Request.Client.birthDate}}",
+        "gender": "{{#? this.Request.Client.gender}}"
+      },
+      "employee": {
+        "id": "{{#? this.Request.Employee.id}}",
+        "userId": "{{#? this.Request.Employee.UserId}}",
+        "identification": "{{#? this.Request.Employee.identification}}",
+        "firstName": "{{#? this.Request.Employee.firstName}}",
+        "lastName": "{{#? this.Request.Employee.lastName}}",
+        "phoneNumber": "{{#? this.Request.Employee.phoneNumber}}",
+        "gender": "{{#? this.Request.Employee.gender}}"
+      }
+    }
+  }
+}

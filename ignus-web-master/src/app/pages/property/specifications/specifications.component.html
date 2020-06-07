@@ -1,0 +1,44 @@
+<ul class="list-group">
+    <li class="list-group-item list-group-content" *ngFor="let type of typeSpecifications">
+        <div >
+            <div class="panel-heading"> 
+                <a data-toggle="collapse" data-parent="#accordion"  style="color: rgb(112, 112, 112)" [attr.href]="'#'+ type.id">
+                {{ type.name | uppercase }}</a>                
+            </div>
+            <div id="{{type.id}}" class="panel-collapse collapse" ><br>
+              <div class="col-md-6" *ngFor="let num of type.specifications_number" class="card-body">
+                  {{ num.name| titlecase}} : {{ num.quantity }}
+              </div>
+              <div class="col-md-6" *ngFor="let check of type.specifications_checkbox" class="card-body">
+                  <div *ngIf="check.quantity == true">
+                      {{ check.name| titlecase}} <i class="fa fa-check-circle checkin"></i>
+                  </div>
+              </div>
+            </div>
+          </div>
+    </li>
+</ul>
+
+<!-- <div id="accordion">
+    <div *ngFor="let type of typeSpecifications" class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#'+ type.id" aria-expanded="true" aria-controls="collapseOne">
+            {{type.name}} - {{ type.id}}
+          </button>
+        </h5>
+      </div>
+  
+      <div id="{{ type.id }}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          #{{ type.id}}
+        <div class="col-lg-6" *ngFor="let num of type.specifications_number" class="card-body">
+            {{ num.name| titlecase}}
+        </div>
+        <div class="col-lg-6" *ngFor="let check of type.specifications_checkbox" class="card-body">
+            {{ check.name| titlecase}}
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+

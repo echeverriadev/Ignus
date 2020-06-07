@@ -1,0 +1,14 @@
+{
+  "status": true,
+  "data": {
+      "id": "{{#? typeCalification.id}}",
+      "name": "{{#? typeCalification.name}}",
+      "description": "{{#? typeCalification.description}}",
+      "Califications" : {
+        "{{#each typeCalification.Califications}}": {
+          "id": "{{#? this.id}}",
+          "value": "{{#? this.value}}"
+        }
+      }
+    }
+}

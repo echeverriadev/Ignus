@@ -1,0 +1,9 @@
+{
+  "status": true,
+  "data": {
+    "id": "{{#? promotion.id}}",
+    "name": "{{#? promotion.name}}",
+    "description": "{{#? promotion.description}}",
+    "urlImage": "{{#? promotion.urlImage}}"
+  }
+}

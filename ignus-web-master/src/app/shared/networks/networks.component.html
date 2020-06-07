@@ -1,0 +1,9 @@
+<ul class="list-inline social-icon rrss">
+  <li>
+     <h4><span style="color:#c2c2c2">Redes sociales:</span></h4>
+  </li>
+
+      <li *ngFor="let socialNetwork of socialNetworks"><a href="{{ socialNetwork.urlAgencySocialNetwork }}"><i class="fa {{ socialNetwork.fontAwesome }}"></i></a>
+      </li>
+
+</ul>

@@ -1,0 +1,11 @@
+{
+  "status": true,
+  "data": {
+    "{{#each promotions}}": {
+      "id": "{{#? this.id}}",
+      "name": "{{#? this.name}}",
+      "description": "{{#? this.description}}",
+      "urlImage": "{{#? this.urlImage}}"
+    }
+  }
+}

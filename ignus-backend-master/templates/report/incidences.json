@@ -1,0 +1,13 @@
+{
+  "status": true,
+  "data": {
+    "xAxis": {
+      "categories": "{{#? report.categories}}"
+    },
+    "series": [{
+      "name": "Servicio",
+      "data": "{{#? report.data}}"
+    }],
+    "quantity": "{{#? report.quantity}}"
+  }
+}

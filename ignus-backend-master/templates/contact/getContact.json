@@ -1,0 +1,38 @@
+{
+  "status": true,
+  "data": {
+      "id": "{{#? contact.id}}",
+      "name": "{{#? contact.name}}",
+      "description": "{{#? contact.description}}",
+      "contactDate": "{{#? contact.contactDate}}",
+      "answerDate": "{{#? contact.answerDate}}",
+      "status": "{{#? contact.status}}",
+      "subject": {
+        "id": "{{#? contact.Subject.id}}",
+        "name": "{{#? contact.Subject.name}}",
+        "description": "{{#? contact.Subject.description}}"
+      },
+      "typeContact": {
+        "id": "{{#? contact.TypeContact.id}}",
+        "name": "{{#? contact.TypeContact.name}}",
+        "description": "{{#? contact.TypeContact.description}}"
+      },
+      "user": {
+        "{{#merge}}": [
+          {
+            "id": "{{#? contact.User.id}}",
+            "identification": "{{#? contact.User.Client.identification}}",
+            "firstName": "{{#? contact.User.Client.firstName}}",
+            "lastName": "{{#? contact.User.Client.lastName}}",
+            "birthDate": "{{#? contact.User.Client.birthDate}}",
+            "phoneNumber": "{{#? contact.User.Client.phoneNumber}}",
+            "username": "{{#? contact.User.username}}",
+            "gender": "{{#? contact.User.Client.gender}}"
+          },
+          {
+            "username": "{{#? contact.guestEmail}}"
+          }
+        ]
+      }
+  }
+}

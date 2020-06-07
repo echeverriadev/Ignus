@@ -1,0 +1,16 @@
+{
+  "status": true,
+  "data": {
+    "id": "{{#? warranty.id}}",
+    "name": "{{#? warranty.name}}",
+    "description": "{{#? warranty.description}}",
+    "contracts" : {
+      "{{#each warranty.Contracts}}": {
+        "id": "{{#? this.id}}",
+        "folioNumber": "{{#? this.folioNumber}}",
+        "elaborationDate": "{{#? this.elaborationDate}}",
+        "firmDate": "{{#? this.firmDate}}"
+      }
+    }
+  }
+}

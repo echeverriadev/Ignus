@@ -1,0 +1,10 @@
+{
+  "status": true,
+  "data": {
+    "xAxis": {
+      "categories": "{{#? report.categories}}"
+    },
+    "series": "{{#? report.series}}",
+    "quantiy": "{{#? report.quantity}}"
+  }
+}

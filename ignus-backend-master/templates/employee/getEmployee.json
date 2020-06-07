@@ -1,0 +1,25 @@
+{
+  "status": true,
+  "data": {
+    "user": {
+      "id": "{{#? employee.User.id}}",
+      "username": "{{#? employee.User.username}}",
+      "urlAvatar": "{{#? employee.User.urlAvatar}}"
+    },
+    "person": {
+      "id": "{{#? employee.id}}",
+      "identification": "{{#? employee.identification}}",
+      "firstName": "{{#? employee.firstName}}",
+      "lastName": "{{#? employee.lastName}}",
+      "gender": "{{#? employee.gender}}",
+      "phoneNumber": "{{#? employee.phoneNumber}}"
+    },
+    "roles": {
+      "{{#each employee.User.Roles}}": {
+        "id": "{{#? this.id}}",
+        "name": "{{#? this.name}}",
+        "description": "{{#? this.description}}"
+      }
+    }
+  }
+}

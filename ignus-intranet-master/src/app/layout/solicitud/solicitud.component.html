@@ -1,0 +1,431 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Solicitudes'" [icon]="'fa-edit'"></app-page-header>
+    <div class="container">
+
+        <div class="card-header" style="text-align: -webkit-center;">Solicitudes.</div>
+        <div class="card mb-3">
+            <div class="row mb-3">
+                <div *ngIf="solicitud.typeServiceId=='1' || solicitud.typeServiceId=='2'" class="col col-sm-4" style="position: relative; top: 15px;">
+                    <div class="input-group">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Buscar..." aria-label="Search">
+                        <span class="input-group-btn">
+                            <button style="background: #1AB394; border-radius: 100%;font-size:24px; height: 40px; width: 40px;"><i
+                                    style="color: white" class="fa fa-search" aria-hidden="true" data-toggle="tooltip"
+                                    data-placement="top" title="Buscar"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col col-sm-4 text-right">
+                </div>
+            </div>
+            <div class="card-body  table-responsive">
+                <table class="card-body table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Identificación</th>
+                            <th> Tipo de Solicitud </th>
+                            <th> Fecha</th>
+                            <th> Hora</th>
+                            <th> Estatus </th>
+                            <th colspan="4">Acciones</th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th style="background-color:transparent">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Nombre..." aria-label="Search"
+                                    [(ngModel)]="solicName" />
+                            </th>
+                            <th style="background-color:transparent">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Apellido..." aria-label="Search"
+                                    [(ngModel)]="solicApellido" />
+                            </th>
+                            <th style="background-color:transparent">
+                                <input class="form-control mr-sm-2" type="text" placeholder="identificación..."
+                                    aria-label="Search" [(ngModel)]="solicIdent" />
+                            </th>
+                            <th style="background-color:transparent">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Tipo..." aria-label="Search"
+                                    [(ngModel)]="solicTipo" />
+                            </th>
+                            <th style="background-color:transparent">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Fecha..." aria-label="Search"
+                                    [(ngModel)]="solicFecha" />
+                            </th>
+                            <th style="background-color:transparent">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Hora..." aria-label="Search"
+                                    [(ngModel)]="solicHora" />
+                            </th>
+                            <th style="background-color:transparent">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Estatus..." aria-label="Search"
+                                    [(ngModel)]="solicEstatus" />
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let solicitud of solicitudes | searchfilter: solicName:solicApellido:solicIdent:solicTipo:solicFecha:solicHora:solicEstatus | paginate: { itemsPerPage: numPage, currentPage: pages }; let i = index"
+                            (click)=openForEdit(solicitud)>
+                            <td>{{solicitud.client.firstName}}</td>
+                            <td>{{solicitud.client.lastName}}</td>
+                            <td>{{solicitud.client.identification}}</td>
+                            <td>{{solicitud.typeService.name}}</td>
+                            <td>{{solicitud.wishDate}}</td>
+                            <td>Opcional</td>
+                            <td>Pendiente</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" style="background: #1AB394; border-radius: 20px; color: white"
+                                        (click)="open(ver, 'show', i)" data-toggle="tooltip" data-placement="top" title="Detalle">
+                                        <fa-icon [icon]="faEye"></fa-icon>
+                                    </button>
+                                    <button type="button" style="background: #1AB394; border-radius: 20px; color: white"
+                                        (click)="open(content,'Save', i)" data-toggle="tooltip" data-placement="top"
+                                        title="Aceptar">
+                                        <fa-icon [icon]="faCheck"></fa-icon>
+                                    </button>
+                                    <button type="button" style="background: #1AB394; border-radius: 20px; color: white"
+                                        (click)="open(delete, 'delete', i)" data-toggle="tooltip" data-placement="top"
+                                        title="Rechazar">
+                                        <fa-icon [icon]="faCancel"></fa-icon>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <pagination-template #p="paginationApi" (pageChange)="pages=$event">
+                <nav class="text-left" style="position: relative; left: 1.1rem;">
+                    <ul class="pagination">
+                        <li class="page-item" [class.disabled]="p.isFirstPage()">
+                            <a class="page-link" (click)="p.previous()"> <span class="fa fa-angle-double-left"></span>
+                            </a>
+                        </li>
+
+                        <li *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value" class="page-item"
+                            [ngClass]="{'active' : p.getCurrent() === page.value}">
+                            <a class="page-link" (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
+                                {{ page.label }} </a>
+                            <a class="page-link" *ngIf="p.getCurrent() === page.value"> {{ page.label }} </a>
+                        </li>
+
+                        <li class="page-item" [class.disabled]="p.isLastPage()">
+                            <a class="page-link" (click)="p.next()"> <span class="fa fa-angle-double-right"></span> </a>
+                        </li>
+                    </ul>
+                </nav>
+            </pagination-template>
+        </div>
+    </div>
+</div>
+
+<!-- Content -->
+<!-- aceptar solicitud buy-->
+<ng-template #content let-c="close" let-d="dismiss">
+
+    <div class="modal-header">
+        <h4 class="modal-title"> Solicitud </h4>
+
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="firstName">Nombre</label>
+                <input class="form-control" [(ngModel)]="solicitud.client.firstName" name="firstName" ng-model="firstName"
+                    type="text" disabled>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="lastName">Apellido</label>
+                <input class="form-control" [(ngModel)]="solicitud.client.lastName" name="lastName" ng-model="lastName"
+                    type="text" disabled>
+            </div>
+        </div>
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="email">Telefono</label>
+                <input class="form-control" type="text" disabled>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="name">Tipo de servicio</label>
+                <input class="form-control" [(ngModel)]="solicitud.typeService.name" name="name" ng-model="lastName"
+                    type="text" disabled>
+            </div>
+        </div>
+
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="requestDate">Fecha de la solicitud</label>
+                <div class="input-group">
+                    <input name="fechaIni" id="fechaIni" [bsConfig]="datePickerConfig" type="text" class="form-control"
+                        bsDatepicker [(ngModel)]="solicitud.requestDate" autocomplete="off" disabled>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="requestDate">Fecha deseada por el cliente</label>
+                <div class="input-group">
+                    <input name="fechaEnd" id="fechaEnd" [bsConfig]="datePickerConfig" type="text" class="form-control"
+                        bsDatepicker [(ngModel)]="solicitud.wishDate" autocomplete="off" disabled>
+                </div>
+            </div>
+        </div>
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="porpiedad">Tipo de porpiedad</label>
+                <input class="form-control" name="porpiedad" id="porpiedad" type="text" [(ngModel)]="solicitud.property.typeProperty.name"
+                    disabled>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="ubicacion">Ubicanción</label>
+                <input class="form-control" name="ubicacion" id="ubicacion" type="text" [(ngModel)]="solicitud.property.ubication"
+                    disabled>
+            </div>
+        </div>
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="state">Estado</label>
+                <input class="form-control" name="state" id="state" type="text" [(ngModel)]="solicitud.property.state.name"
+                    disabled>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="municipality">Municipio</label>
+                <input class="form-control" name="municipality" id="municipality" type="text" [(ngModel)]="solicitud.property.municipality.name"
+                    disabled>
+            </div>
+        </div>
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="parish">Parroquia</label>
+                <input class="form-control" name="parish" id="parish" type="text" [(ngModel)]="solicitud.property.parish.name"
+                    disabled>
+            </div>
+
+            <div class="form-group col-md-6">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button style="background: #1AB394; border-radius: 20px" type="button" class="btn btn-success" (click)="c('Close click');">
+            <i style="color: white" class="fa fa-plus" aria-hidden="true" data-toggle="tooltip" data-placement="top"
+                title="Agregar"></i>
+        </button>
+    </div>
+</ng-template>
+
+<!--ver-->
+<ng-template #ver let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title"> Solicitud </h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" *ngIf="view">
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="firstName">Nombre</label>
+                <input class="form-control" [(ngModel)]="solicitud.client.firstName" name="firstName" ng-model="firstName"
+                    type="text" disabled>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="lastName">Apellido</label>
+                <input class="form-control" [(ngModel)]="solicitud.client.lastName" name="lastName" ng-model="lastName"
+                    type="text" disabled>
+            </div>
+        </div>
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="email">Telefono</label>
+                <input class="form-control" type="text" disabled>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="name">Tipo de servicio</label>
+                <input class="form-control" [(ngModel)]="solicitud.typeService.name" name="name" ng-model="lastName"
+                    type="text" disabled>
+            </div>
+        </div>
+
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="requestDate">Fecha de la solicitud</label>
+                <div class="input-group">
+                    <input name="fechaIni" id="fechaIni" [bsConfig]="datePickerConfig" type="text" class="form-control"
+                        bsDatepicker [(ngModel)]="solicitud.requestDate" autocomplete="off" disabled>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="requestDate">Fecha deseada por el cliente</label>
+                <div class="input-group">
+                    <input name="fechaEnd" id="fechaEnd" [bsConfig]="datePickerConfig" type="text" class="form-control"
+                        bsDatepicker [(ngModel)]="solicitud.wishDate" autocomplete="off" disabled>
+                </div>
+            </div>
+        </div>
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="porpiedad">Tipo de porpiedad</label>
+                <input class="form-control" name="porpiedad" id="porpiedad" type="text" [(ngModel)]="solicitud.property.typeProperty.name"
+                    disabled>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="ubicacion">Ubicanción</label>
+                <input class="form-control" name="ubicacion" id="ubicacion" type="text" [(ngModel)]="solicitud.property.ubication"
+                    disabled>
+            </div>
+        </div>
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="state">Estado</label>
+                <input class="form-control" name="state" id="state" type="text" [(ngModel)]="solicitud.property.state.name"
+                    disabled>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="municipality">Municipio</label>
+                <input class="form-control" name="municipality" id="municipality" type="text" [(ngModel)]="solicitud.property.municipality.name"
+                    disabled>
+            </div>
+        </div>
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="parish">Parroquia</label>
+                <input class="form-control" name="parish" id="parish" type="text" [(ngModel)]="solicitud.property.parish.name"
+                    disabled>
+            </div>
+
+            <div class="form-group col-md-6">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-body" *ngIf="!view">
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="firstName">Nombre</label>
+                <input class="form-control" [(ngModel)]="solicitud.client.firstName" name="firstName" ng-model="firstName"
+                    type="text" disabled>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="lastName">Apellido</label>
+                <input class="form-control" [(ngModel)]="solicitud.client.lastName" name="lastName" ng-model="lastName"
+                    type="text" disabled>
+            </div>
+        </div>
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="email">Telefono</label>
+                <input class="form-control" type="text" disabled>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="ng-tns-c12-9" for="name">Tipo de servicio</label>
+                <input class="form-control" [(ngModel)]="solicitud.typeService.name" name="name" ng-model="lastName"
+                    type="text" disabled>
+            </div>
+        </div>
+
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="requestDate">Fecha de la solicitud</label>
+                <div class="input-group">
+                    <input name="fechaIni" id="fechaIni" [bsConfig]="datePickerConfig" type="text" class="form-control"
+                        bsDatepicker [(ngModel)]="solicitud.requestDate" autocomplete="off" disabled>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="requestDate">Fecha deseada por el cliente</label>
+                <div class="input-group">
+                    <input name="fechaEnd" id="fechaEnd" [bsConfig]="datePickerConfig" type="text" class="form-control"
+                        bsDatepicker [(ngModel)]="solicitud.wishDate" autocomplete="off" disabled>
+                </div>
+            </div>
+        </div>
+
+        <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="porpiedad">Tipo de porpiedad</label>
+                <input class="form-control" name="porpiedad" id="porpiedad" type="text" [(ngModel)]="solicitud.property.typeProperty.name"
+                    disabled>
+            </div>
+
+            <!-- <div class="form-group col-md-6">
+                <label for="ubicacion">Ubicanción</label>
+                <input class="form-control" name="ubicacion" id="ubicacion" type="text" [(ngModel)]="solicitud.property.ubication"
+                    disabled>
+            </div> -->
+        </div>
+
+        <!-- <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="state">Estado</label>
+                <input class="form-control" name="state" id="state" type="text" [(ngModel)]="solicitud.property.state.name"
+                    disabled>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="municipality">Municipio</label>
+                <input class="form-control" name="municipality" id="municipality" type="text" [(ngModel)]="solicitud.property.municipality.name"
+                    disabled>
+            </div>
+        </div> -->
+
+        <!-- <div class="row md-3">
+            <div class="form-group col-md-6">
+                <label for="parish">Parroquia</label>
+                <input class="form-control" name="parish" id="parish" type="text" [(ngModel)]="solicitud.property.parish.name"
+                    disabled>
+            </div>
+
+            <div class="form-group col-md-6">
+            </div>
+        </div> -->
+    </div>
+    <div class="modal-footer">
+        <button style="background: #1AB394; border-radius: 20px" type="button" class="btn btn-success" (click)=" this.submitType == 'Cancel'; d('Cross click')">
+            <fa-icon [icon]="faCancel" data-toggle="tooltip" data-placement="top" title="Cancelar"></fa-icon>
+        </button>
+    </div>
+</ng-template>
+
+<!-- eliminar -->
+<ng-template #delete let-c="close" let-d="dismiss">
+
+    <div class="modal-header">
+        <h4 class="modal-title"> Eliminar </h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label class="col-md-8" for="razon">Por favor indique la razon por la que deroga la solicitud</label>
+                <textarea class="form-control" [(ngModel)]="rechazo.description" type="text" name="razon" id="razon"
+                    rows="6"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button style="background: #1AB394; border-radius: 20px" type="button" class="btn btn-success" (click)="c(i)">
+            <fa-icon [icon]="faCheck" data-toggle="tooltip" data-placement="top" title="Guardar"></fa-icon>
+        </button>
+    </div>
+</ng-template>

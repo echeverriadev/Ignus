@@ -1,0 +1,30 @@
+{
+    "status": true,
+    "data": {
+        "id": "{{#? agency.id}}",
+        "rif": "{{#? agency.rif}}",
+        "name": "{{#? agency.name}}",
+        "mission": "{{#? agency.mission}}",
+        "vision": "{{#? agency.vision}}",
+        "generalObjective": "{{#? agency.generalObjective}}",
+        "ubication": "{{#? agency.ubication}}",
+        "foundationDate": "{{#? agency.foundationDate}}",
+        "phoneNumber": "{{#? agency.phoneNumber}}",
+        "phoneNumber2": "{{#? agency.phoneNumber2}}",
+        "socialNetworks": {
+            "{{#each agency.SocialNetworks}}": {
+            "id": "{{#? this.id}}",
+            "name": "{{#? this.name}}",
+            "urlLogo": "{{#? this.urlLogo}}",
+            "urlAgencySocialNetwork": "{{#? this.urlAgencySocialNetwork}}",
+            "fontAwesome": "{{#? this.fontAwesome}}",
+            "iconIonic": "{{#? this.iconIonic}}"
+          }
+        },
+        "logo": {
+            "id": "{{#? agency.Images[0].id}}",
+            "url": "{{#? agency.Images[0].url}}",
+            "description": "{{#? agency.Images[0].description}}"
+        }
+    }
+}

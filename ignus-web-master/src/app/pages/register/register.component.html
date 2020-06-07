@@ -1,0 +1,56 @@
+<div class="container col-lg-4 col-lg-offset-4">
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+       <div>
+          <br><br><br><br><br>
+          <div>
+             <img class="responsive" style="height:90px; width:200px" src="{{logo}}" alt="{{agency.name}}"/>
+          </div>
+          <h3>Suscribase a {{agency.name}}.</h3>
+          <p>Y disfrute de nuestros servicios</p>
+          <form (ngSubmit)="subscribe()">
+             <div class="form-group">
+                <input [(ngModel)]="client.username" type="text" name="username" class="form-control form-contact" placeholder="Email"/>
+             </div>
+             <div class="form-group">
+                <input [(ngModel)]="client.firstName" type="text" name="firstName" class="form-control form-contact" placeholder="Nombre"/>
+             </div>
+             <div class="form-group">
+                <input [(ngModel)]="client.lastName" type="text" name="lastName" class="form-control form-contact" placeholder="Apellido"/>
+             </div>
+             <div class="form-group">
+                <input [(ngModel)]="client.birthDate" type="date" name="birthDate"   class="form-control form-contact" placeholder="Fecha de nacimiento"/>
+             </div> 
+             <div class="form-group">
+                <select [(ngModel)]="client.gender" name="gender" class="form-control">
+                <option value="¿Genero?" selected disabled>¿Genero?...</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                </select>
+             </div>
+             <div class="form-group">
+                <input [(ngModel)]="client.phoneNumber" type="text" name="phoneNumber" class="form-control form-contact" placeholder="Teléfono"/>
+             </div>
+             <div class="row">
+               
+                  <div class="form-group col-lg-4">
+                      <div class="checkbox i-checks"><label style="font-size: 10px;"> <input  [(ngModel)]= "client.notificationEmail"  name="notificationEmail" type="checkbox"><i></i>¿Deseas recibir notificaciones por correo?</label></div>
+                   </div>
+                   <div class="form-group col-lg-4">
+                      <div class="checkbox i-checks"><label style="font-size: 10px;"> <input  [(ngModel)]= "client.notificationWS" name="notificationWS" type="checkbox"><i></i>¿Deseas recibir notificaciones por WhatsApp?</label></div>
+                   </div>
+                   <div class="form-group col-lg-4">
+                      <div class="checkbox i-checks"><label style="font-size: 10px;"> <input  [(ngModel)]= "client.notificationSMS" name="notificationSMS" type="checkbox"><i></i>¿Deseas recibir notificaciones por sms?</label></div>
+                   </div>
+                   <div class="form-group">
+                      <div class="checkbox i-checks"><label> <input name="terms" type="checkbox"><i></i>Acepto los términos y condiciones </label></div>
+                   </div>
+               
+             </div>
+             <button type="submit" class="btn btn-primary block full-width m-b">Suscribir</button>
+             <p class="text-muted text-center"><small>¿Ya tienes una cuenta?</small></p>
+             <a class="btn btn-sm btn-white btn-block" routerLink="/login">Ingresar</a>
+          </form>
+       </div>
+    </div>
+ </div>
+ 

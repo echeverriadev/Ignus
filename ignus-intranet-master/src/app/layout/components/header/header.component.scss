@@ -1,0 +1,78 @@
+$topnav-background-color: #1ab394;
+:host {
+    .navbar {
+        background-color: $topnav-background-color;
+        box-shadow:0 8px 10px rgba(150, 106, 106, 0.5), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        padding: 10px;
+        .navbar-brand {
+            color: #fff;
+        }
+        .nav-item > a {
+            color: #fff;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    .photo img {
+    background-color:#1FB5AD;
+    text-decoration:none;
+    color:#fff;
+    transition:all 0.3s ease 0s;
+    -webkit-transition:all 0.3s ease 0s;
+    border-radius:30px;
+    -webkit-border-radius:80px;
+}
+
+.notification {
+    background-color: #21252900;
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+    position: relative;
+    display: inline-block;
+    border-style: solid;
+  border-width: 2px;
+    border-radius: 50px;
+    border-color: white;
+  }
+    
+  .notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+  }
+
+    .messages {
+        width: 300px;
+        .media {
+            border-bottom: 1px solid #ddd;
+            padding: 5px 10px;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        .media-body {
+            h5 {
+                font-size: 13px;
+                font-weight: 600;
+            }
+            .small {
+                margin: 0;
+            }
+            .last {
+                font-size: 12px;
+                margin: 0;
+            }
+        }
+    }
+
+      
+     
+      ul li ul li:hover {background: #1FB5AD;}
+
+}

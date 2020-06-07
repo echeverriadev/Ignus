@@ -1,0 +1,37 @@
+<div class="col-md-4">
+   <div class="ibox">
+    <div class="ibox-content product-box">
+      
+      <div class="product-imitation">
+        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" [alt]="property.Publication.images[0].description" [src]="property.Publication.images[0].url" data-holder-rendered="true" img="reponsive rounded" style="height: 225px; width: 100%; display: block;">
+      </div>
+      <div class="product-desc">
+          <span class="product-price">
+              {{ property.Publication.price | currency :"BsS" }}
+          </span>
+          <small class="text-muted">{{ property.typeProperty.name | titlecase}} en {{ property.TypeService.name | lowercase }} | 113 m²</small>
+          <p class="product-name"> {{property.Publication.title | uppercase | slice:0:25}}</p>
+
+
+
+          <div class="small m-t-xs description">
+            {{ property.Publication.description | slice:0:80}}
+          </div>
+          <div class="row">
+              <div class="m-t text-righ">
+                  <button routerLink="/propiedad/{{ property.id }}" style="margin-right: 2px"
+                  type="button" class="btn btn-xs btn-outline btn-primary ">
+                      Detalle
+                  </button>
+                    <a href="https://localhost:4200/login?propertyId={{property.id}}" target="_blank">
+                        <button  style="margin-right: 2px"
+                        type="button" class="btn btn-xs btn-outline btn-primary ">
+                            Solicitar
+                        </button>
+                    </a> 
+              </div>
+          </div>
+      </div>
+  </div>
+   </div>
+ </div>

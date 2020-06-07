@@ -1,0 +1,54 @@
+{
+  "status": true,
+  "data": {
+    "id": "{{#? appointment.id}}",
+    "dateAppointment": "{{#? this.dateAppointment}}",
+    "dateAppointmentUS": "{{#? this.dateAppointmentUS}}",
+    "dateAppointmentEU": "{{#? this.dateAppointmentEU}}",
+    "turn": "{{#? this.turn}}",
+    "statusStr": "{{#? this.statusStr}}",
+    "colorStatus": "{{#? this.colorStatus}}",
+    "reason": "{{#? this.reason}}",
+    "Request": {
+      "id": "{{#? appointment.Request.id}}",
+      "comment": "{{#? appointment.Request.comment}}",
+      "requestDate": "{{#? appointment.Request.requestDate}}",
+      "aprobationDate": "{{#? appointment.Request.aprobationDate}}",
+      "attendedDate": "{{#? appointment.Request.attendedDate}}",
+      "wishDate": "{{#? appointment.Request.wishDate}}",
+      "status": "{{#? appointment.Request.statusStr}}",
+      "client": {
+        "id": "{{#? appointment.Request.Client.id}}",
+        "userId": "{{#? appointment.Request.Client.UserId}}",
+        "username": "{{#? appointment.Request.Client.User.username}}",
+        "identification": "{{#? appointment.Request.Client.identification}}",
+        "firstName": "{{#? appointment.Request.Client.firstName}}",
+        "lastName": "{{#? appointment.Request.Client.lastName}}",
+        "bankName": "{{#? appointment.Request.Client.bankName}}",
+        "bankAccount": "{{#? appointment.Request.Client.bankAccount}}",
+        "birthDate": "{{#? appointment.Request.Client.birthDate}}",
+        "gender": "{{#? appointment.Request.Client.gender}}"
+      },
+      "employee": {
+        "id": "{{#? appointment.Request.Employee.id}}",
+        "userId": "{{#? appointment.Request.Employee.UserId}}",
+        "identification": "{{#? appointment.Request.Employee.identification}}",
+        "firstName": "{{#? appointment.Request.Employee.firstName}}",
+        "lastName": "{{#? appointment.Request.Employee.lastName}}",
+        "phoneNumber": "{{#? appointment.Request.Employee.phoneNumber}}",
+        "gender": "{{#? appointment.Request.Employee.gender}}",
+        "phoneNumber": "{{#? appointment.Request.Employee.phoneNumber}}"
+      },
+      "typeRequest": {
+        "id": "{{#? appointment.Request.TypeRequest.id}}",
+        "name": "{{#? appointment.Request.TypeRequest.name}}",
+        "description": "{{#? appointment.Request.TypeRequest.description}}"
+      }
+    },
+    "typeAppointment": {
+      "id": "{{#? appointment.TypeAppointment.id}}",
+      "name": "{{#? appointment.TypeAppointment.name}}",
+      "description": "{{#? appointment.TypeAppointment.description}}"
+    }
+  }
+}

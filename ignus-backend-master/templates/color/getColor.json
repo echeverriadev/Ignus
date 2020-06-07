@@ -1,0 +1,9 @@
+{
+  "status": true,
+  "data": {
+    "id": "{{#? color.id}}",
+    "header": "{{#? color.header}}",
+    "menu": "{{#? color.menu}}",
+    "background": "{{#? color.background}}"
+  }
+}

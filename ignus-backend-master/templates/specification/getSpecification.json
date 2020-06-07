@@ -1,0 +1,9 @@
+{
+  "status": true,
+  "data": {
+      "id": "{{#? Specification.id}}",
+      "name": "{{#? Specification.name}}",
+      "description": "{{#? Specification.description}}",
+      "typeInput": "{{#? Specification.typeInput}}"
+    }
+}

@@ -1,0 +1,91 @@
+<div class="body">
+      <ngx-spinner
+         type="ball-beat"
+         size = "medium"
+         color = "#1ab394">
+         <p style="font-size: 10px; color: white">Cargando información</p>
+      </ngx-spinner>
+   <div id="inSlider" class="carousel slide carousel-fade" data-ride="carousel" ng-non-bindable>
+      <div>
+            <ol class="carousel-indicators">
+                  <li data-target="inSlider" data-slide-to="0" class="active"></li>
+                  <li data-target="inSlider" data-slide-to="1"></li>
+               </ol>
+               <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                     <div class="container">
+                        <div class="carousel-caption">
+                           <h1>
+                              Encontramos<br/>
+                              para usted el inmueble<br/>                    
+                              Que desea<br/>                      
+                           </h1>
+                           <p>Visite nuestro catálago de inmuebles</p>
+                           <p>
+                              <a class="btn btn-lg btn-primary" routerLink="/propiedades" role="button">Catálogo</a>
+                           </p>
+                        </div>
+                        <div class="carousel-image wow zoomIn">
+                           <img src="{{ logo }}" style="height:300px; width:600px" alt="{{agency.name }}"/> 
+                        </div>
+                     </div>
+                     <!-- Set background for slide in css -->
+                     <div class="header-back one"></div>
+                  </div>
+                  <div class="item">
+                     <div class="container">
+                        <div class="carousel-caption blank">
+                           <h1>Nuestro fuerte <br> es el servicio <br/> </h1>
+                           <p>Por ello creamos nuestra app para adaptarnos más a sus necesidades.</p>
+                           <p><a class="btn btn-lg btn-primary" href="#" role="button">Android</a>&nbsp;  &nbsp; 
+                              <a class="btn btn-lg btn-primary" href="#" role="button">Iphone</a>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- Set background for slide in css -->
+                     <div class="header-back two"></div>
+                  </div>
+               </div>
+               <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+               </a>
+               <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+               </a>
+      </div>
+      <div id="#" class="container" style="padding-top: 50px;">
+            <div class="row">
+               <div class="col-lg-4 col-md-12 col-sm-12">
+                  <app-networks></app-networks>
+               </div>
+               <div class="col-lg-4 hidden-xs col-lg-offset-4" style=" color:#c2c2c2">
+                  <br/> 
+  
+                     <p> <span>Noticias:</span>  aqui va un texto prueba</p>
+                  
+               </div>
+            </div>
+      </div>  
+   </div>
+
+   <section id="services" class="container-fluid gray-section">
+      <div class="container animated fadeInLeft">
+         <div class="row m-b-lg">
+            <div class="col-lg-12 text-center">
+               <div class="navy-line"></div>
+               <h1>Nuestros servicios</h1>
+               <p>Suscríbase y viva la experiencia con Ignus. Le ofrecemos las mejores ofertas y planes en materia inmobiliaria.</p>
+            </div>
+         </div>   
+         <div class="row">
+            <app-services></app-services>
+         </div>
+      </div>
+   </section>
+
+   <section>
+      <app-footer></app-footer>
+   </section>
+</div>

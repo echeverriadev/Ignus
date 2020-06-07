@@ -1,0 +1,55 @@
+{
+  "status": true,
+  "data": {
+    "{{#each contracts}}": {
+      "id": "{{#? this.id}}",
+      "folioNumber": "{{#? this.folioNumber}}",
+      "elaborationDate": "{{#? this.elaborationDate}}",
+      "firmDate": "{{#? this.firmDate}}",
+      "urlFileContract": "{{#? this.urlFileContract}}",
+      "owner": {
+        "id": "{{#? this.Transaction.Request.Property.Client.id}}",
+        "username": "{{#? this.Transaction.Request.Property.Client.User.username}}",
+        "identification": "{{#? this.Transaction.Request.Property.Client.identification}}",
+        "firstName": "{{#? this.Transaction.Request.Property.Client.firstName}}",
+        "lastName": "{{#? this.Transaction.Request.Property.Client.lastName}}",
+        "birthDate": "{{#? this.Transaction.Request.Property.Client.birthDate}}",
+        "phoneNumber": "{{#? this.Transaction.Request.Property.Client.phoneNumber}}",
+        "gender": "{{#? this.Transaction.Request.Property.Client.gender}}"
+      },
+      "client": {
+        "id": "{{#? this.Transaction.Request.Client.id}}",
+        "username": "{{#? this.Transaction.Request.Client.User.username}}",
+        "identification": "{{#? this.Transaction.Request.Client.identification}}",
+        "firstName": "{{#? this.Transaction.Request.Client.firstName}}",
+        "lastName": "{{#? this.Transaction.Request.Client.lastName}}",
+        "birthDate": "{{#? this.Transaction.Request.Client.birthDate}}",
+        "phoneNumber": "{{#? this.Transaction.Request.Client.phoneNumber}}",
+        "gender": "{{#? this.Transaction.Request.Client.gender}}"
+      },
+      "agent": {
+        "id": "{{#? this.Transaction.Request.Employee.id}}",
+        "username": "{{#? this.Transaction.Request.Employee.User.username}}",
+        "identification": "{{#? this.Transaction.Request.Employee.identification}}",
+        "firstName": "{{#? this.Transaction.Request.Employee.firstName}}",
+        "lastName": "{{#? this.Transaction.Request.Employee.lastName}}",
+        "gender": "{{#? this.Transaction.Request.Employee.gender}}",
+        "phoneNumber": "{{#? this.Transaction.Request.Employee.phoneNumber}}"
+      },
+      "typeService": {
+        "id": "{{#? this.Transaction.Request.Property.TypeService.id}}",
+        "name": "{{#? this.Transaction.Request.Property.TypeService.name}}",
+        "description": "{{#? this.Transaction.Request.Property.TypeService.description}}",
+        "urlImage": "{{#? this.Transaction.Request.Property.TypeService.urlImage}}",
+        "offeringProperty": "{{this.Transaction.Request.Property.TypeService.offeringProperty}}"
+      },
+      "warranties" : {
+        "{{#each this.Warranties}}": {
+          "id": "{{#? this.id}}",
+          "name": "{{#? this.name}}",
+          "description": "{{#? this.description}}"
+        }
+      }
+    }
+  }
+}

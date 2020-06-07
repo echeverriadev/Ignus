@@ -1,0 +1,47 @@
+{
+  "status": true,
+  "data": {
+    "user": {
+      "id": "{{#? client.User.id}}",
+      "username": "{{#? client.User.username}}"
+    },
+    "person": {
+      "id": "{{#? client.id}}",
+      "identification": "{{#? client.identification}}",
+      "firstName": "{{#? client.firstName}}",
+      "lastName": "{{#? client.lastName}}",
+      "bankName": "{{#? client.bankName}}",
+      "bankAccount": "{{#? client.bankAccount}}",
+      "birthDate": "{{#? client.birthDate}}",
+      "gender": "{{#? client.gender}}",
+      "phoneNumber": "{{#? client.phoneNumber}}"
+    },
+    "roles": {
+      "{{#each client.User.Roles}}": {
+        "id": "{{#? this.id}}",
+        "name": "{{#? this.name}}",
+        "description": "{{#? this.description}}"
+      }
+    },
+    "specifications": {
+      "{{#each client.Specifications}}": {
+        "id": "{{#? this.id}}",
+        "name": "{{#? this.name}}",
+        "description": "{{#? this.description}}",
+        "typeInput": "{{#? this.typeInput}}"
+      }
+    },
+    "state": {
+      "id": "{{#? client.Parish.Municipality.State.id}}",
+      "name": "{{#? client.Parish.Municipality.State.name}}"
+    },
+    "municipality": {
+        "id": "{{#? client.Parish.Municipality.id}}",
+        "name": "{{#? client.Parish.Municipality.name}}"
+    },
+    "parish": {
+      "id": "{{#? client.Parish.id}}",
+      "name": "{{#? client.Parish.name}}"
+    }
+  }
+}

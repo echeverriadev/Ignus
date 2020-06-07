@@ -1,0 +1,27 @@
+.btn-register {
+  float: right;
+  position: relative;
+  bottom: 0px;
+  right: 10px;
+}
+
+// .btn-ignus,.active{
+//     color: #fff;
+//     background-color: #17A185;
+//     border-color: #AEAEAE;
+// }
+
+// .btn-ignusgris{
+//     color: #fff;
+//     background-color: #AEAEAE;
+//     border-color: #AEAEAE;
+// }
+
+.cal-disabled {
+  background-color: #eee;
+  pointer-events: none;
+}
+
+.cal-disabled .cal-day-number {
+  opacity: 0.1;
+}

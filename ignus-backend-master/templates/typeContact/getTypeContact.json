@@ -1,0 +1,25 @@
+{
+  "status": true,
+  "data": {
+      "id": "{{#? typeContact.id}}",
+      "name": "{{#? typeContact.name}}",
+      "description": "{{#? typeContact.description}}",
+      "contacts" : {
+        "{{#each typeContact.Contacts}}": {
+          "id": "{{#? this.id}}",
+          "name": "{{#? this.name}}",
+          "description": "{{#? this.description}}",
+          "user": {
+            "id": "{{#? this.User.Client.id}}",
+            "username": "{{#? this.User.username}}",
+            "identification": "{{#? this.User.Client.identification}}",
+            "firstName": "{{#? this.User.Client.firstName}}",
+            "lastName": "{{#? this.User.Client.lastName}}",
+            "birthDate": "{{#? this.User.Client.birthDate}}",
+            "phoneNumber": "{{#? this.User.Client.phoneNumber}}",
+            "gender": "{{#? this.User.Client.gender}}"
+          }
+        }
+      }
+    }
+}

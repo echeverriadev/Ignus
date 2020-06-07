@@ -1,0 +1,19 @@
+{
+  "status": true,
+  "data": {
+    "{{#each califications}}": {
+      "id": "{{#? this.id}}",
+      "TransactionId": "{{#? this.TransactionId}}",
+      "TypeCalification" : {
+        "id": "{{#? this.TypeCalification.id}}",
+        "name": "{{#? this.TypeCalification.name}}",
+        "description": "{{#? this.TypeCalification.description}}"
+      },
+      "QualificationCriteria" : {
+        "id": "{{#? this.QualificationCriterium.id}}",
+        "name": "{{#? this.QualificationCriterium.name}}",
+        "description": "{{#? this.QualificationCriterium.description}}"
+      }
+    }
+  }
+}

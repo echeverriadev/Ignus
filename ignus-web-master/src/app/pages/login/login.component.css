@@ -1,0 +1,35 @@
+.ibox-content{
+    background-color: #ffffff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+}
+.m-b{
+    margin-bottom: 15px;
+}
+.full-width{
+    width: 100% !important;
+}
+.btn-white {
+    color: inherit;
+    background: white;
+    border: 1px solid #e7eaec;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn-group-sm > .btn, .btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.loginColumns {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 20px 20px 20px;
+}
