@@ -27,7 +27,7 @@
     "nodemon": "^1.17.5",
     "pg": "^7.6.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.41.0",
+    "sequelize": "^5.15.1",
     "serve-favicon": "^2.5.0",
     "stjs": "0.0.5",
     "twilio": "^3.27.1"
