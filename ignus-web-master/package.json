@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/router": "^6.0.0",
     "core-js": "^2.5.5",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ngx-bootstrap": "^3.2.0",
     "ngx-bootstrap-modal": "^2.0.1",
     "ngx-pagination": "^3.2.1",
